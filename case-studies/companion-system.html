@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A technical gameplay design case study about a connected companion-drone system.">
+  <title>Companion Drone System — Joshua Fields</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">JF</span><span>Joshua Fields</span></a>
+    <nav class="site-nav"><a href="../index.html#work">All work</a><a class="nav-contact" href="mailto:jf.joshua.fields@gmail.com">Contact</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="case-hero section-shell">
+      <a class="back-link" href="../index.html#work">← Selected work</a>
+      <p class="eyebrow">Abilities &amp; AI </p>
+      <h1>Companion drone as a connected player system</h1>
+      <div class="case-summary">
+        <p>I designed the companion as a connected player system, owning its gameplay direction, balancing and iteration across controls, abilities, targeting, resources, progression and feedback.</p>
+        <div class="case-facts">
+          <div><span>Role</span><strong>System design direction, balancing and iteration</strong></div>
+          <div><span>Tools</span><strong>Unreal Engine, GAS, data, UI and documentation</strong></div>
+          <div><span>Focus</span><strong>Controls, abilities, resources, progression and feedback</strong></div>
+          <div><span>Scope</span><strong>Design, tuning, validation and feedback</strong></div>
+        </div>
+      </div>
+      <div class="case-banner case-visual visual-drone" aria-hidden="true">
+        <span class="diagram-caption">Connected companion system</span>
+        <div class="system-map companion-map">
+          <svg class="map-lines" viewBox="0 0 1000 300" preserveAspectRatio="none"><defs><marker id="companion-arrow-case" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8" /></marker></defs><path d="M250 45 L375 150" marker-end="url(#companion-arrow-case)"/><path d="M250 150 L375 150" marker-end="url(#companion-arrow-case)"/><path d="M250 255 L375 150" marker-end="url(#companion-arrow-case)"/><path d="M625 45 L750 150" marker-end="url(#companion-arrow-case)"/><path d="M625 150 L750 150" marker-end="url(#companion-arrow-case)"/><path d="M625 255 L750 150" marker-end="url(#companion-arrow-case)"/></svg>
+          <span class="diagram-node map-node companion-targeting">Targeting + Response</span>
+          <span class="diagram-node map-node companion-resource">Resource + Cooldown</span>
+          <span class="diagram-node map-node companion-progression">Ability Progression</span>
+          <span class="diagram-node map-node companion-controls">Intuitive Controls</span>
+          <span class="diagram-node orange-node map-node companion-behaviour">Ability Behaviour</span>
+          <span class="diagram-node map-node companion-ui">Responsive UI</span>
+          <span class="diagram-node accent-node map-node companion-outcome">Cohesive System</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body section-shell">
+      <nav class="case-index" aria-label="Case study sections"><a href="#problem">01 · Context</a><a href="#model">02 · System model</a><a href="#decisions">03 · Response</a><a href="#iteration">04 · Iteration</a><a href="#outcome">05 · Outcome</a></nav>
+      <article class="case-prose">
+        <section id="problem">
+          <p class="eyebrow">01 · Problem</p>
+          <h2>A companion only works when its systems agree.</h2>
+          <p>The drone combined direct control, autonomous behaviour, targeting, abilities, energy, cooldowns, progression and HUD feedback. Each part affected the player's understanding of the others, so tuning them separately risked inconsistent rules, unclear availability and surprising outcomes.</p>
+        </section>
+        <section id="model">
+          <p class="eyebrow">02 · System model</p>
+          <h2>Design the relationships, not just the individual abilities.</h2>
+          <p>I mapped the companion as a connected decision system: how the player issued commands, how the drone interpreted targets, what each ability did, how resources governed cadence, how progression changed capability and how UI communicated the current state. This made the wider experience the unit of design rather than a random collection of features.</p>
+        </section>
+        <section id="decisions">
+          <p class="eyebrow">03 · Design decisions</p>
+          <h2>Make every part reinforce the same player model.</h2>
+          <p>I defined and tuned the relationships between input, selection, response, availability and growth. Targeting profiles considered screen position, range and context; energy, cooldowns, damage and regeneration formed a shared ability economy; progression exposed scalable tuning; and UI requirements evolved alongside behaviour so choices and outcomes were instantly readable by the player.</p>
+        </section>
+        <section id="iteration">
+          <p class="eyebrow">04 · Iteration</p>
+          <h2>Iterate across the system, not in isolation.</h2>
+          <p>Playtest and review feedback drove repeated passes across controls, damage, regeneration, cooldowns, grenade behaviour, hacking distance, selection profiles, progression values and companion indicators. Each change was evaluated against the wider system so improving one element did not undermine balance, clarity or responsiveness elsewhere.</p>
+        </section>
+        <section id="outcome">
+          <p class="eyebrow">05 · Outcome</p>
+          <h2>A more coherent and tunable companion experience.</h2>
+          <p>The resulting work aligned controls, targeting, ability behaviour, resources, progression and feedback around a consistent player model. That made individual behaviours easier to understand and tune while preserving the companion as one cohesive system.</p>
+          <figure class="case-media">
+            <div class="case-media-frame">
+              <video controls playsinline preload="metadata" aria-label="Showcase of the companion drone system">
+                <source src="../media/companion-drone-showcase-hq.webm" type="video/webm">
+                <source src="../media/companion-drone-showcase.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+            <figcaption>Gameplay showcase of the companion drone system.</figcaption>
+          </figure>
+        </section>
+      </article>
+    </div>
+
+    <a class="next-case section-shell" href="breadcrumb-navigation.html"><span>Next case study<strong>Breadcrumb navigation: from player signal to reusable guidance</strong></span><b aria-hidden="true">→</b></a>
+  </main>
+  <footer class="site-footer"><span>Joshua Fields</span><span>Gameplay & Systems Design · case study</span><span><span data-year></span></span></footer>
+</body>
+</html>

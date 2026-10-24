@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A technical gameplay design case study about decoupling damage and physical response.">
+  <title>Physical Response Systems — Joshua Fields</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">JF</span><span>Joshua Fields</span></a>
+    <nav class="site-nav"><a href="../index.html#work">All work</a><a class="nav-contact" href="mailto:jf.joshua.fields@gmail.com">Contact</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="case-hero section-shell">
+      <a class="back-link" href="../index.html#work">← Selected work</a>
+      <p class="eyebrow">Combat systems</p>
+      <h1>Decoupling damage and physical response</h1>
+      <div class="case-summary">
+        <p>I designed and tuned two related changes: making impulse more predictable across different masses, then separating damage from physical response so each source could be balanced without destabilising the other.</p>
+        <div class="case-facts">
+          <div><span>Role</span><strong>Systems design, data implementation and tuning</strong></div>
+          <div><span>Tools</span><strong>Unreal Engine, data, curves and validation</strong></div>
+          <div><span>Focus</span><strong>Damage, impulse, AoE and ragdoll</strong></div>
+          <div><span>Scope</span><strong>Diagnosis, design, tuning and hardening</strong></div>
+        </div>
+      </div>
+      <div class="case-banner case-visual visual-response" aria-hidden="true">
+        <span class="diagram-caption">Decoupled response model</span>
+        <div class="system-map response-map">
+          <svg class="map-lines" viewBox="0 0 1000 240" preserveAspectRatio="none"><defs><marker id="response-arrow-case" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8" /></marker></defs><path d="M250 120 L375 52" marker-end="url(#response-arrow-case)"/><path d="M250 120 L375 188" marker-end="url(#response-arrow-case)"/><path d="M625 52 L750 52" marker-end="url(#response-arrow-case)"/><path d="M625 188 L750 188" marker-end="url(#response-arrow-case)"/></svg>
+          <span class="diagram-node map-node response-source">Tightly Coupled Config</span>
+          <span class="diagram-node orange-node map-node response-physics">Physics Controls</span>
+          <span class="diagram-node orange-node map-node response-damage">Damage Controls</span>
+          <span class="diagram-node accent-node map-node response-spectacle">Spectacle Through Motion</span>
+          <span class="diagram-node accent-node map-node response-balance">Gameplay Balance Preservation</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body section-shell">
+      <nav class="case-index" aria-label="Case study sections">
+        <a href="#problem">01 · Context</a><a href="#analysis">02 · Diagnosis</a><a href="#solution">03 · Response</a><a href="#validation">04 · Validation</a><a href="#outcome">05 · Outcome</a>
+      </nav>
+      <article class="case-prose">
+        <section id="problem">
+          <p class="eyebrow">01 · Problem</p>
+          <h2>Two related problems were obscuring physical feel.</h2>
+          <p>First, identical impulse values produced inconsistent results across differently weighted objects. Later, damage, radial impulse and final ragdoll response were still too tightly coupled. Changes intended to improve one weapon, ability or explosion could alter unrelated behaviour elsewhere.</p>
+          <div class="case-callout">The design problem was not simply “make reactions stronger”. It was to preserve weapon identity and readable force while keeping lethality and spectacle independently controllable.</div>
+        </section>
+
+        <section id="analysis">
+          <p class="eyebrow">02 · Analysis</p>
+          <h2>Separate consistency from source identity.</h2>
+          <p>I traced how configured force passed through mass, velocity limits, falloff, character state and source-specific behaviour. That showed two distinct needs: a predictable baseline across mass, and independent control over the damage and physical response authored for each source.</p>
+        </section>
+
+        <section id="solution">
+          <p class="eyebrow">03 · Solution</p>
+          <h2>Stabilise the baseline, then decouple the channels.</h2>
+          <p>The first change used mass remapping and a maximum-velocity clamp to make equivalent settings behave more consistently. The later AoE work separated physical response from damage, allowing weapons, companion abilities and area effects to retain distinct identities without relying on a single global relationship.</p>
+        </section>
+
+        <section id="validation">
+          <p class="eyebrow">04 · Validation</p>
+          <h2>Iterate across all sources, not one isolated case.</h2>
+          <p>The work went through repeated tuning passes across weapons, grenades, explosions and other damage sources. This included companion-drone grenades, where ability balance and the desired physical response overlapped. Feedback-driven iterations corrected excessive reactions and verified that changes remained predictable across the wider system.</p>
+        </section>
+
+        <section id="outcome">
+          <p class="eyebrow">05 · Outcome</p>
+          <h2>Predictable motion without tying spectacle to lethality.</h2>
+          <p>The combined work created a more dependable baseline across mass and gave designers more precise control over physical feel without changing unrelated damage values. It reduced coupling, made regression causes easier to isolate and preserved the intended character of individual weapons and abilities.</p>
+          <figure class="case-media">
+            <div class="case-media-frame">
+              <video controls playsinline preload="metadata" aria-label="Showcase of the physical response system">
+                <source src="../media/physical-response-showcase-hq.webm" type="video/webm">
+                <source src="../media/physical-response-showcase.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+            <figcaption>Gameplay showcase of the tuned physical response system.</figcaption>
+          </figure>
+        </section>
+      </article>
+    </div>
+
+    <a class="next-case section-shell" href="companion-system.html"><span>Next case study<strong>Companion drone as a connected player system</strong></span><b aria-hidden="true">→</b></a>
+  </main>
+  <footer class="site-footer"><span>Joshua Fields</span><span>Gameplay & Systems Design · case study</span><span><span data-year></span></span></footer>
+</body>
+</html>

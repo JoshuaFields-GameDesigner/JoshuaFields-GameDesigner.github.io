@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A gameplay design case study about carrying a multiplayer physical game mode from rules and feel through implementation and hardening.">
+  <title>Grenade Football — Joshua Fields</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">JF</span><span>Joshua Fields</span></a>
+    <nav class="site-nav"><a href="../index.html#work">All work</a><a class="nav-contact" href="mailto:jf.joshua.fields@gmail.com">Contact</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="case-hero section-shell">
+      <a class="back-link" href="../index.html#work">← Selected work</a>
+      <p class="eyebrow">Multiplayer game mode · Delivered and hardened</p>
+      <h1>Grenade Football: from game loop to hardening</h1>
+      <div class="case-summary">
+        <p>I designed and implemented key parts of the mode's connected physical play: launcher feel and football physics, player movement, possession and trajectory cues, and validation of collision and multiplayer dependencies.</p>
+        <div class="case-facts">
+          <div><span>Role</span><strong>Gameplay systems design and implementation</strong></div>
+          <div><span>Tools</span><strong>Unreal Engine, Blueprint, UI and test builds</strong></div>
+          <div><span>Focus</span><strong>Physical play, movement and multiplayer feedback</strong></div>
+          <div><span>Scope</span><strong>Design, tuning, delivery and hardening</strong></div>
+        </div>
+      </div>
+      <div class="case-banner case-visual visual-football" aria-hidden="true">
+        <span class="diagram-caption">Connected physical game mode</span>
+        <div class="system-map football-map">
+          <svg class="map-lines" viewBox="0 0 1000 300" preserveAspectRatio="none"><defs><marker id="football-arrow-case" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8" /></marker></defs><path d="M250 45 L375 150" marker-end="url(#football-arrow-case)"/><path d="M250 150 L375 150" marker-end="url(#football-arrow-case)"/><path d="M250 255 L375 150" marker-end="url(#football-arrow-case)"/><path d="M625 150 L750 150" marker-end="url(#football-arrow-case)"/></svg>
+          <span class="diagram-node map-node football-physics">Football + Launcher</span>
+          <span class="diagram-node map-node football-movement">Dash + Jump</span>
+          <span class="diagram-node map-node football-feedback">Possession + Trajectory</span>
+          <span class="diagram-node orange-node map-node football-loop-node">Connected Physical Loop</span>
+          <span class="diagram-node accent-node map-node football-outcome">Hardened Multiplayer Mode</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body section-shell">
+      <nav class="case-index" aria-label="Case study sections"><a href="#challenge">01 · Context</a><a href="#loop">02 · Design response</a><a href="#delivery">03 · Delivery</a><a href="#risk">04 · Validation</a><a href="#outcome">05 · Outcome</a></nav>
+      <article class="case-prose">
+        <section id="challenge">
+          <p class="eyebrow">01 · Challenge</p>
+          <h2>Physical fun depends on more than physics.</h2>
+          <p>The mode needed satisfying ball interaction, movement suited to physical contests, readable possession, useful trajectory information and stable multiplayer behaviour. A local fix in any one area could easily damage another part of the loop.</p>
+        </section>
+        <section id="loop">
+          <p class="eyebrow">02 · Connected design</p>
+          <h2>Make every player-facing system serve the mode.</h2>
+          <p>I treated football physics, launcher behaviour, movement and spatial feedback as parts of the same physical loop. Within that work, I led the redesign of dash and jump for the mode. Dash changed from following camera direction to respecting stick direction, allowing players to tackle directionally without first turning the camera.</p>
+        </section>
+        <section id="delivery">
+          <p class="eyebrow">03 · Hands-on delivery</p>
+          <h2>Rules, feel and feedback moved together.</h2>
+          <p>The implementation work included repeated football-physics passes, charge and hip-fire behaviour, projectile and impact setup, dash and jump changes, possession markers, landing visuals, nameplates and HUD controls. These were tuned together so movement, ball interaction and feedback supported the same competitive loop.</p>
+          <ul><li>Iterated the core physical interaction across multiple submitted passes.</li><li>Adapted dash and jump to the needs of the game mode.</li><li>Improved launcher behaviour around the faster competitive loop.</li><li>Added clearer spatial and possession feedback.</li></ul>
+        </section>
+        <section id="risk">
+          <p class="eyebrow">04 · Multiplayer hardening</p>
+          <h2>Fix the bug without breaking the game mode.</h2>
+          <p>A collision change that addressed a disruptive camera interaction risked interfering with creator-authored goal triggers. I investigated the dependency, tested personal client/server builds and requested targeted QA coverage before committing to the safer solution.</p>
+          <div class="case-callout">This is the production lesson at the centre of the case: technically correct in isolation is not the same as safe in context.</div>
+        </section>
+        <section id="outcome">
+          <p class="eyebrow">05 · Outcome</p>
+          <h2>A more coherent and dependable mode.</h2>
+          <p>The work improved the mode's physical core, player movement, competitive readability and presentation while protecting multiplayer and creator-facing dependencies. It demonstrates delivery across connected system design, implementation, UI and risk-led validation.</p>
+          <figure class="case-media">
+            <div class="case-media-frame">
+              <video controls playsinline preload="metadata" aria-label="Showcase of the Grenade Football game mode">
+                <source src="../media/grenade-football-showcase-hq.webm" type="video/webm">
+                <source src="../media/grenade-football-showcase.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+            <figcaption>Gameplay showcase of the finished Grenade Football mode.</figcaption>
+          </figure>
+        </section>
+      </article>
+    </div>
+
+    <a class="next-case section-shell" href="physical-response.html"><span>Return to first case study<strong>Decoupling damage and physical response</strong></span><b aria-hidden="true">↺</b></a>
+  </main>
+  <footer class="site-footer"><span>Joshua Fields</span><span>Sanitised portfolio case study</span><span><span data-year></span></span></footer>
+</body>
+</html>

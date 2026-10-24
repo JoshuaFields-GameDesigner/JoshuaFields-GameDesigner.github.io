@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Joshua Fields, a senior technical gameplay and systems designer specialising in Unreal Engine, interconnected systems and production-ready delivery.">
+  <title>Joshua Fields — Technical Gameplay & Systems Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="Joshua Fields, home">
+      <span class="brand-mark" aria-hidden="true">JF</span>
+      <span>Joshua Fields</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" data-nav>
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a class="nav-contact" href="mailto:jf.joshua.fields@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Senior gameplay &amp; systems designer</p>
+        <h1>I make complex gameplay systems <span>clear, tunable and shippable.</span></h1>
+        <p class="hero-intro">I bridge design intent and hands-on Unreal implementation by mapping dependencies, building workable solutions and carrying them through validation, iteration and documentation.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work</a>
+          <a class="button button-quiet" href="https://www.linkedin.com/in/joshua-fields-designer" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="downloads/Joshua-Fields-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-system reveal" aria-label="Design process from player need to a production-ready system">
+        <div class="system-label">From player need to shippable systems</div>
+        <div class="system-sequence">
+          <div class="sequence-step"><span>01</span><div><strong>Define</strong><small>Project Vision + Player Need + Constraints</small></div></div>
+          <div class="sequence-step"><span>02</span><div><strong>Map</strong><small>Behaviour + Data + Dependencies</small></div></div>
+          <div class="sequence-step"><span>03</span><div><strong>Scope</strong><small>System &#47 Feature Boundaries + Ownership</small></div></div>
+          <div class="sequence-step"><span>04</span><div><strong>Implement</strong><small>Smallest Safe Change</small></div></div>
+          <div class="sequence-step"><span>05</span><div><strong>Validate</strong><small>Behaviour + Edge Cases + Feedback</small></div></div>
+          <div class="sequence-step"><span>06</span><div><strong>Iterate</strong><small>Tuning + Refinement + Risk Resolution</small></div></div>
+        </div>
+        <div class="sequence-outcome"><span>Outcome</span><strong>Hardened, Player-Focused Systems</strong></div>
+      </div>
+    </section>
+
+    <section class="work section-shell" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Selected case studies</p>
+        <h2>Evidence over adjectives.</h2>
+        <p>Four examples showing how I diagnose interconnected problems, make practical decisions and carry work into production.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card case-card-featured reveal">
+          <a href="case-studies/physical-response.html" aria-label="Read case study: Decoupling damage and physical response">
+            <div class="case-visual case-image" aria-hidden="true">
+              <img src="media/physical-response-card.webp" alt="" width="1600" height="620" loading="lazy">
+            </div>
+            <div class="case-content">
+              <div class="case-meta"><span>Combat systems</span></div>
+              <h3>Decoupling damage and physical response</h3>
+              <p>Making impulse more predictable across mass, then separating damage from physical response for safer source-specific tuning.</p>
+              <span class="text-link">Read case study <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="case-card reveal">
+          <a href="case-studies/companion-system.html" aria-label="Read case study: Companion drone as a connected player system">
+            <div class="case-visual case-image" aria-hidden="true">
+              <img src="media/companion-system-card.webp" alt="" width="1600" height="620" loading="lazy">
+            </div>
+            <div class="case-content">
+              <div class="case-meta"><span>Abilities &amp; AI</span></div>
+              <h3>Companion drone as a connected player system</h3>
+              <p>Designing and balancing a connected companion system across controls, abilities, targeting, resources, progression and feedback.</p>
+              <span class="text-link">Read case study <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="case-card reveal">
+          <a href="case-studies/breadcrumb-navigation.html" aria-label="Read case study: Breadcrumb navigation from player signal to reusable guidance">
+            <div class="case-visual case-image" aria-hidden="true">
+              <img src="media/breadcrumb-navigation-card.webp" alt="" width="1600" height="620" loading="lazy">
+            </div>
+            <div class="case-content">
+              <div class="case-meta"><span>Player guidance</span></div>
+              <h3>Breadcrumb navigation: from player signal to reusable guidance</h3>
+              <p>Matching guidance to navigation risk, then using the recorded churn reduction to move from broad rollout to targeted polish.</p>
+              <span class="text-link">Read case study <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="case-card reveal">
+          <a href="case-studies/grenade-football.html" aria-label="Read case study: Grenade Football from game loop to multiplayer hardening">
+            <div class="case-visual case-image" aria-hidden="true">
+              <img src="media/grenade-football-card.webp" alt="" width="1600" height="620" loading="lazy">
+            </div>
+            <div class="case-content">
+              <div class="case-meta"><span>Multiplayer mode</span></div>
+              <h3>Grenade Football: from game loop to hardening</h3>
+              <p>Connecting physical play, player movement and readable feedback, then hardening the mode's multiplayer dependencies.</p>
+              <span class="text-link">Read case study <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="approach section-shell" id="approach">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Working method</p>
+        <h2>From player need to hardened systems.</h2>
+      </div>
+      <ol class="process-list">
+        <li class="reveal"><span>01</span><h3>Define the problem</h3><p>Clarify the project vision, player need and production constraints.</p></li>
+        <li class="reveal"><span>02</span><h3>Map the system</h3><p>Trace behaviour, data, dependencies and edge cases.</p></li>
+        <li class="reveal"><span>03</span><h3>Scope the change</h3><p>Establish feature boundaries, ownership and the safest viable route.</p></li>
+        <li class="reveal"><span>04</span><h3>Implement</h3><p>Build the smallest safe change and expose useful tuning controls.</p></li>
+        <li class="reveal"><span>05</span><h3>Validate</h3><p>Test behaviour, edge cases, feedback and wider dependencies.</p></li>
+        <li class="reveal"><span>06</span><h3>Iterate and harden</h3><p>Refine the experience, resolve risks and document the resulting system.</p></li>
+      </ol>
+      <div class="process-outcome reveal"><span>Outcome</span><strong>Hardened, player-focused systems that remain understandable and maintainable.</strong></div>
+    </section>
+
+    <section class="capabilities section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Broad systems range. Consistent delivery pattern.</h2>
+      </div>
+      <div class="capability-board reveal">
+        <div><span>Gameplay systems</span><p>Combat, weapons, abilities, progression and interconnected rules.</p></div>
+        <div><span>Technical design</span><p>Blueprint, data assets, tables, curves, UMG and code-adjacent analysis.</p></div>
+        <div><span>AI-adjacent gameplay</span><p>Companion behaviour, awareness, gameplay balance and creator-configurable systems.</p></div>
+        <div><span>Player feedback</span><p>HUD, AR, minimap, navigation, objective and multiplayer information.</p></div>
+        <div><span>UGC &amp; tools</span><p>Creator workflows, guardrails, reusable exposure and validation paths.</p></div>
+        <div><span>Production readiness</span><p>Feasibility, risk, testing, hardening and cross-discipline documentation.</p></div>
+      </div>
+    </section>
+
+    <section class="about section-shell" id="about">
+      <div class="about-copy reveal">
+        <p class="eyebrow">About</p>
+        <h2>A designer who stays close to implementation.</h2>
+        <p>My work has progressed from mission and encounter design into sustained ownership of combat, companion, physical-response, player-feedback and cross-project systems. I am most useful where the problem crosses team boundaries and needs both design judgement and practical technical follow-through.</p>
+      </div>
+      <div class="about-details reveal">
+        <div><span>Current focus</span><strong>Gameplay &amp; Systems Design</strong></div>
+        <div><span>Primary engine</span><strong>Unreal Engine 5 / Blueprint</strong></div>
+        <div><span>Location</span><strong>Fife, Scotland · Remote</strong></div>
+        <div><span>Experience</span><strong>AAA, multiplayer, UGC and live production</strong></div>
+      </div>
+    </section>
+
+    <section class="contact section-shell reveal">
+      <p class="eyebrow">Let’s talk</p>
+      <h2>Looking for someone who can connect the design, the system and the delivery?</h2>
+      <div class="contact-actions">
+        <a class="button button-primary" href="mailto:jf.joshua.fields@gmail.com">Email Joshua</a>
+        <a class="button button-quiet" href="https://www.linkedin.com/in/joshua-fields-designer" rel="noreferrer">View LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Joshua Fields</span>
+    <span>Gameplay &amp; Systems Design</span>
+    <span>Portfolio · <span data-year></span></span>
+  </footer>
+</body>
+</html>

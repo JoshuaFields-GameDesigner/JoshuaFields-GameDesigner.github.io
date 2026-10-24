@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A gameplay systems case study about turning player feedback and level-specific drop-off signals into reusable navigation guidance.">
+  <title>Breadcrumb Navigation — Joshua Fields</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">JF</span><span>Joshua Fields</span></a>
+    <nav class="site-nav"><a href="../index.html#work">All work</a><a class="nav-contact" href="mailto:jf.joshua.fields@gmail.com">Contact</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="case-hero section-shell">
+      <a class="back-link" href="../index.html#work">← Selected work</a>
+      <p class="eyebrow">Player guidance</p>
+      <h1>Breadcrumb navigation: from player signal to reusable guidance</h1>
+      <div class="case-summary">
+        <p>I used player feedback and level-specific drop-off signals to identify recurring navigation friction, then designed and implemented persistent guidance for critical routes and scan-triggered help where assistance should remain optional.</p>
+        <div class="case-facts">
+          <div><span>Role</span><strong>Systems design and implementation</strong></div>
+          <div><span>Tools</span><strong>Unreal Engine, Blueprint, AR/UI and data</strong></div>
+          <div><span>Focus</span><strong>Navigation, objectives and player feedback</strong></div>
+          <div><span>Scope</span><strong>Diagnosis, framework, rollout and documentation</strong></div>
+        </div>
+      </div>
+      <div class="case-banner case-visual visual-breadcrumb" aria-hidden="true">
+        <span class="diagram-caption">Guidance matched to player need</span>
+        <div class="system-map breadcrumb-map">
+          <svg class="map-lines" viewBox="0 0 1000 240" preserveAspectRatio="none"><defs><marker id="breadcrumb-arrow-case" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8" /></marker></defs><path d="M270 120 L380 120" marker-end="url(#breadcrumb-arrow-case)"/><path d="M620 120 L750 52" marker-end="url(#breadcrumb-arrow-case)"/><path d="M620 120 L750 188" marker-end="url(#breadcrumb-arrow-case)"/></svg>
+          <span class="diagram-node map-node breadcrumb-source">Player Feedback + Mission Churn Data</span>
+          <span class="diagram-node orange-node map-node breadcrumb-classification">Severity Classification</span>
+          <span class="diagram-node accent-node map-node breadcrumb-persistent">Persistent Marker</span>
+          <span class="diagram-node accent-node map-node breadcrumb-demand">On-Demand Marker</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body section-shell">
+      <nav class="case-index" aria-label="Case study sections"><a href="#context">01 · Context</a><a href="#diagnosis">02 · Diagnosis</a><a href="#response">03 · Design response</a><a href="#delivery">04 · Delivery</a><a href="#outcome">05 · Outcome</a></nav>
+      <article class="case-prose">
+        <section id="context">
+          <p class="eyebrow">01 · Context</p>
+          <h2>Players were losing the route between objectives.</h2>
+          <p>Player feedback and level-specific drop-off signals pointed to recurring navigation friction. Layout, enemy placement, distance and elevation could make the next objective difficult to locate even when the intended route was clear to the development team.</p>
+        </section>
+
+        <section id="diagnosis">
+          <p class="eyebrow">02 · Diagnosis</p>
+          <h2>Not every navigation failure needed the same intervention.</h2>
+          <p>Some locations created critical route-finding problems and required guidance without player input. Elsewhere, many players navigated successfully while a meaningful subset still needed help. Always-on markers in those situations would solve one problem by creating another: unnecessary over-guidance.</p>
+        </section>
+
+        <section id="response">
+          <p class="eyebrow">03 · Design response</p>
+          <h2>Match the strength of guidance to the severity of the problem.</h2>
+          <p>I designed two related forms of breadcrumbing within one visual language:</p>
+          <ul>
+            <li><strong>Persistent guidance</strong> for critical locations, activated by gameplay conditions when players needed an unmissable route cue.</li>
+            <li><strong>Scan-triggered guidance</strong> as an on-demand safety net where assistance was useful but should not interrupt players already navigating successfully.</li>
+          </ul>
+          <div class="case-callout">The design decision was not simply whether to add a marker. It was when guidance should appear, who should trigger it and how much agency the player should retain.</div>
+        </section>
+
+        <section id="delivery">
+          <p class="eyebrow">04 · Delivery</p>
+          <h2>Build a reusable system instead of a collection of level fixes.</h2>
+          <p>I implemented and documented shared Blueprint, AR/UI and data structures covering marker behaviour, triggering, lifetime and display rules. Mission-specific conditions could then use the same underlying model across multiple campaign locations rather than creating unrelated one-off solutions.</p>
+          <figure class="case-media">
+            <div class="case-media-frame">
+              <video controls playsinline preload="metadata" aria-label="Showcase of the breadcrumb navigation system">
+                <source src="../media/breadcrumb-navigation-showcase-hq.webm" type="video/webm">
+                <source src="../media/breadcrumb-navigation-showcase.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+            <figcaption>Gameplay showcase of the finished breadcrumb guidance system.</figcaption>
+          </figure>
+        </section>
+
+        <section id="outcome">
+          <p class="eyebrow">05 · Outcome</p>
+          <h2>Significantly lower churn, followed by targeted polish.</h2>
+          <p>The recorded production conclusion was that churn fell significantly after the main rollout. Broad iteration stopped once the result was sufficient; later work focused on specific route corrections, scan reminders, GPS alignment and isolated additions.</p>
+        </section>
+      </article>
+    </div>
+
+    <a class="next-case section-shell" href="grenade-football.html"><span>Next case study<strong>Grenade Football: from game loop to hardening</strong></span><b aria-hidden="true">→</b></a>
+  </main>
+  <footer class="site-footer"><span>Joshua Fields</span><span>Gameplay & Systems Design · case study</span><span><span data-year></span></span></footer>
+</body>
+</html>
