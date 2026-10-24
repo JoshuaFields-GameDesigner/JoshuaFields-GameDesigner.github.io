@@ -216,7 +216,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-details strong { font-size: .92rem; }
 
 .contact { margin-bottom: 100px; padding: 70px; border: 1px solid rgba(71,212,232,.25); border-radius: 30px; background: radial-gradient(circle at 85% 30%, rgba(71,212,232,.09), transparent 24rem), var(--surface); }
-.contact h2 { max-width: 880px; }
+.contact h2 { max-width: 880px; line-height: 1.06; }
 .site-footer { display: flex; justify-content: space-between; gap: 25px; padding: 28px max(18px, calc((100vw - var(--content)) / 2)); border-top: 1px solid var(--line); color: var(--dim); font: .68rem Consolas, monospace; text-transform: uppercase; }
 
 .case-page .site-header { position: relative; }
